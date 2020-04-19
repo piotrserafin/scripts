@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#   _____ _____
+#  |  _  |   __|  Piotr Serafin
+#  |   __|__   |  https://piotrserafin.dev
+#  |__|  |_____|  https://github.com/piotrserafin
+#
+# GTF
+# 1440x900 @ 60.00 Hz (GTF) hsync: 55.92 kHz; pclk: 106.47 MHz
+
+xrandr --newmode "1440x900_60.00" 106.47 1440 1520 1672 1904 900 901 904 932 -HSync +Vsync
+xrandr --addmode Virtual1 "1440x900_60.00"
+xrandr --output Virtual1 --primary --mode "1440x900_60.00" --pos 0x0 --rotate normal
+

@@ -1,0 +1,7 @@
+#!/bin/sh
+#   _____ _____
+#  |  _  |   __|  Piotr Serafin
+#  |   __|__   |  https://piotrserafin.dev
+#  |__|  |_____|  https://github.com/piotrserafin
+#                                                            
+feh --no-fehbg --bg-scale '/home/pserafin/bg/arch_wall.jpg' 
