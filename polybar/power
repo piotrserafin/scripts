@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+#   _____ _____
+#  |  _  |   __|  Piotr Serafin
+#  |   __|__   |  https://piotrserafin.dev
+#  |__|  |_____|  https://github.com/piotrserafin
+#
+
+PATH_PS="/sys/class/power_supply/"
+PATH_AC="${PATH_PS}/AC"
+PATH_BATTERY_0="${PATH_PS}/BAT0"
+
+ac=0
+capacity=0
+
+if [ -f "$PATH_AC/online" ]; then
+    ac=$(cat "$PATH_AC/online")
+fi
+
+if [ -f "$PATH_BATTERY_0/capacity" ]; then
+    capacity=$(cat "$PATH_BATTERY_0/capacity")
+fi
+
+if [ "$ac" -eq 1 ]; then
+    icon=""
+
+    if [ "$capacity" -gt 97 ]; then
+        echo "$icon"
+    else
+        echo "$icon$capacity%"
+    fi
+else
+    if [ "$capacity" -gt 90 ]; then
+        icon=""
+    elif [ "$capacity" -gt 80 ]; then
+        icon=""
+    elif [ "$capacity" -gt 70 ]; then
+        icon=""
+    elif [ "$capacity" -gt 60 ]; then
+        icon=""
+    elif [ "$capacity" -gt 50 ]; then
+        icon=""
+    elif [ "$capacity" -gt 40 ]; then
+        icon=""
+    elif [ "$capacity" -gt 30 ]; then
+        icon=""
+    elif [ "$capacity" -gt 20 ]; then
+        icon=""
+    elif [ "$capacity" -gt 10 ]; then
+        icon=""
+    else
+        icon=""
+    fi
+
+    echo "$icon$capacity%"
+fi
