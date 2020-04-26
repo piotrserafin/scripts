@@ -1,0 +1,10 @@
+#   _____ _____
+#  |  _  |   __|  Piotr Serafin
+#  |   __|__   |  https://piotrserafin.dev
+#  |__|  |_____|  https://github.com/piotrserafin
+#
+#
+SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_ONLINE}=="0", \
+    RUN+="/home/pserafin/scripts/polybar/battery --update"
+SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_ONLINE}=="1", \
+    RUN+="/home/pserafin/scripts/polybar/battery --update"

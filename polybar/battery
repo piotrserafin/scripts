@@ -21,16 +21,18 @@ if [ -f "$PATH_BATTERY_0/capacity" ]; then
 fi
 
 if [ "$ac" -eq 1 ]; then
-    icon=""
-
     if [ "$capacity" -gt 97 ]; then
-        echo "$icon"
+        icon=""
     else
-        echo "$icon$capacity%"
+	icon=""
     fi
+
+    echo "$icon $capacity%"
 else
-    if [ "$capacity" -gt 90 ]; then
-        icon=""
+    if [ "$capacity" -gt 97 ]; then
+        icon=""
+    elif [ "$capacity" -gt 90 ]; then
+        icon=""
     elif [ "$capacity" -gt 80 ]; then
         icon=""
     elif [ "$capacity" -gt 70 ]; then
@@ -51,5 +53,5 @@ else
         icon=""
     fi
 
-    echo "$icon$capacity%"
+    echo "$icon $capacity%"
 fi
