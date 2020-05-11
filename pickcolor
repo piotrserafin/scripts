@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#   _____ _____
+#  |  _  |   __|  Piotr Serafin
+#  |   __|__   |  https://piotrserafin.dev
+#  |__|  |_____|  https://github.com/piotrserafin
+#
+colorpicker --short --one-shot --preview | tee >(xclip -selection clipboard)
+
