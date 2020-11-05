@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#   _____ _____
+#  |  _  |   __|  Piotr Serafin
+#  |   __|__   |  https://piotrserafin.dev
+#  |__|  |_____|  https://github.com/piotrserafin
+#
+
+location=${1:-/}
+icon=""
+
+printf "%s %s\n" "$icon" "$(df -h "$location" | awk ' /[0-9]/ {print $5}')"
+
